@@ -1,0 +1,134 @@
+.video {
+  background: #F8FAF9;
+}
+
+.video__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.video__container-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2.7rem;
+  @include tablets{
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+  }
+  @include phones {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 2.8rem;
+  }
+}
+
+.video__container-contant {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: rem(662px);
+  height:rem(391px);
+  @include tablets {
+    width: 39.675rem;
+    height: 23.6375rem;
+  }
+  @include phones {
+    width: 28.275rem;
+    height: 16.7375rem;
+  }
+}
+
+
+.video__player {
+  // position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+// не получилось отобразить кнопку. position: relative на .video__player не исправил ситуации
+// .video__player-btn{
+//   position: absolute;
+//   color: #151515;
+//   height: 400px;
+//   width: 400px;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   cursor: pointer;
+//   width: 100%;
+//   height: 100%;
+//   border: none;
+//   z-index: 1;
+//   background: transparent;
+//   &:active {
+//     opacity: 0;
+//   }
+// }
+
+.video__player-svg {
+  fill: #FFF;
+  width: 3rem;
+  height: 4.375rem;
+  @include tablets {
+    width: 4.47rem;
+    height: 6.53rem;
+  }
+  @include phones {
+    width: 3.21rem;
+    height: 4.64rem;
+  }
+}
+
+
+.video__poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
+  opacity: 1;
+  cursor: pointer;
+  // background: url(./img/player.png);//бек не отображался, пришлось через img
+}
+
+//варианты, которые были показаны в воркшопе не работают пришлось городить...
+.video__container-contant--active
+.video__poster{
+  opacity: 0;
+}
+
+.video__button-img {
+  width: rem(662px);
+  height:rem(359px);
+  @include tablets {
+    width: 39.675rem;
+    height: 21.6375rem;
+  }
+  @include phones {
+    width: 28.175rem;
+    height: 15.2375rem;
+  }
+}
+
+.video__container-toolbar {
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  height: 2.19rem;
+  padding-left: 1.25rem;
+  padding-right: 1.125rem;
+  background: #151515;
+  @include tablets {
+    height: 2.07rem;
+  }
+  @include phones {
+    height: 1.53rem;
+    padding-left: 0.95rem;
+  }
+}
+
