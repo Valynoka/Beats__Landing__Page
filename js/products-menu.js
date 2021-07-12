@@ -10,10 +10,14 @@ const mesureWidth = item => {
   const paddingLeft = parseInt(textContainer.css("padding-left"));
   const paddingRight = parseInt(textContainer.css("padding-right"));
 
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const isTablet = window.matchMedia("(max-width: 768px)").matches;
+  const isMobile = window.matchMedia("(max-width: 480px)").matches;
 
-  if (isMobile) {
+
+  if (isTablet && !isMobile)  {
     reqItemWidth = screenWidth - titlesWidth;
+  } else if (isMobile) {
+    reqItemWidth = screenWidth - titlesBlocks.width();
   } else {
     reqItemWidth = 524;
   }

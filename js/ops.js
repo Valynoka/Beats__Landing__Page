@@ -4,6 +4,8 @@ const display = $(".wrapper__container");
 const mobileDetect = new MobileDetect(window.navigator.userAgent);
 const isMobile = mobileDetect.mobile();
 
+console.log("isMobile", isMobile);
+
 let inScroll = false
 
 sections.first().addClass("active");
@@ -32,7 +34,7 @@ const performTransition = sectionEq => {
         .eq(sectionEq)
         .addClass("fixed__menu-item--active")
         .siblings()
-        .removeClass("fixed__menu-item--active");// не удалется 
+        .removeClass("fixed__menu-item--active");
     }, 1300);
   }
 }
@@ -42,7 +44,7 @@ const scrollViewport = direction => {
   const activeSection = sections.filter(".active");
   const nextSection = activeSection.next();
   const prevSection = activeSection.prev();
-
+  if ($("body").hasClass("lock") || $("body").hasClass("fancybox-active")) return;
   if (direction === "next" && nextSection.length) {
     performTransition(nextSection.index());
 
@@ -97,13 +99,13 @@ $("[data-scroll-to]").click(e => {
 if (isMobile) { 
   $("body").swipe({
     swipe: function (event, direction) {
-      const scroller = viewportScroller();
+      // const scroller = scrollViewport();
       let scrollDirection = "";
 
-      if (direction == "up") scrollDirection = "next";
-      if (direction == "down") scrollDirection = "prev";
+      if (direction == "up") scrollViewport ("next");
+      if (direction == "down") scrollViewport ("prev");
 
-      scroller[scrollDirection]();
+      // scroller[scrollDirection]();
 
     }
   });

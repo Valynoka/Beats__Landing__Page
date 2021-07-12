@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="main.css" />
   <title>Beats</title>
 </head>
 
@@ -26,7 +26,7 @@
               <div class="header__menu">
                 <ul class="header__menu-list">
                   <li class="header__menu-items">
-                    <a href="#" class="header__menu-link">О нас</a>
+                    <a href="#" data-scroll-to="greeting" class="header__menu-link">О нас</a>
                   </li>
                   <li class="header__menu-items">
                     <a href="#" data-scroll-to="assortment" class="header__menu-link">Наушники</a>
@@ -257,9 +257,7 @@
                   <div class="assortment__footer">
                     <div class="assortment__price">14 990 ₽</div>
                     <div class="assortment__button">
-                      <button  type="button" class="assortment__btn button">ЗАКАЗАТЬ
-                        <a href="#" data-scroll-to="order"></a>
-                      </button>
+                      <button data-scroll-to="order" type="button" class="assortment__btn button">ЗАКАЗАТЬ</button>
                     </div>
                   </div>
                 </div>
@@ -333,9 +331,7 @@
                   <div class="assortment__footer">
                     <div class="assortment__price">14 990 ₽</div>
                     <div class="assortment__button">
-                      <button data-scroll-to="order" type="button" class="assortment__btn button">ЗАКАЗАТЬ
-                        <a href="#" data-scroll-to="order"></a>
-                      </button>
+                      <button data-scroll-to="order" type="button" class="assortment__btn button">ЗАКАЗАТЬ</button>
                     </div>
                   </div>
                 </div>
@@ -485,7 +481,7 @@
       </section>
       <section data-section-id="products-menu" class="section products-menu-section">
         <div class="products-menu__container container">
-          <div class="products-menu__container-title">Меню</div>
+          <div class="products-menu__container-title">Цвета</div>
           <ul class="products-menu">
             <li class="products-menu__item">
               <a href="#" class="products-menu__title">
@@ -635,41 +631,33 @@
       <section data-section-id="video" class="section video">
         <div class="video__container container">
           <div class="video__container-title">КАК МЫ РАБОТАЕМ</div>
-          <div class="video__container-contant">
-            <div id="yt-player" class="video__player">
-              <!-- <button class="video__player-btn">
-                <svg class="video__player-svg">
+          <div class="video__wrapper">
+            <div class="video__player">
+              <video src="./video/Beats.mp4" id="player" class = "video__window" poster ="./img/poster.png"></video>
+              <button class="video__player-img">
+                <svg class="video__btn-svg play">
                   <use xlink:href="./sprite.svg#vPlayer"></use>
                 </svg>
-              </button> -->
+              </button>
             </div>
-            <div class="video__poster">
-              <img class = "video__button-img" src="./img/player.png" alt="">
-            </div>
-            <div class="video__container-toolbar">
-              <div class="duration video__container-duration">
-                <div class="duration__button-wrap">
+            <div class="video__toolbar">
+              <div class="duration">
+                <div class="duration__btn-wrap">
                   <button class="duration__img play"></button>
                 </div>
-                <div class="duration__length-wrap" id="durationLevel">
-                  <button class="duration__length-button"></button>
-                  <!-- <input type="range" class="duration-length duration__length " id="durationLevel"> -->
+                <div class="duration__length-wrap">
+                  <input type="range" class="duration-length duration__length" id="durationLevel">
+                  <!-- <button class="duration__length-button" ></button> -->
                 </div>
               </div>
               <div class="sound">
-                <button class="sound__button">
-                  <svg class="sound__vol">
+                <button class="sound__button" id = "mic">
+                  <svg class="sound__mic">
                     <use xlink:href="./sprite.svg#Vol"></use>
                   </svg>
                 </button>
                 <div class="sound__volume">
-                  <!-- Хотел сделать счетчик для кнопки звука, чтобы когда включаешь звук он был на той отметке, на какой было до отключения -->
-                  <label for="volLevel">
-                    <input id="volLevel" type="range" min="1" max="100" value="50" step="1" aria-valuenow="50"
-                      aria-valuemin="0" aria-valuemax="100" style="width: 100%" class="sound__length"
-                      oninput="outputUpdate(this.value)">
-                    <output class = "sound__mark" for="volLevel" id="volumelvl"></output>
-                  </label>
+                  <input type="range" class="sound__length" id="micLevel">
                 </div>
               </div>
             </div>
@@ -876,25 +864,25 @@
   <div class="burger-menu">
     <ul class="burger-menu-list">
       <li class="burger-menu-items">
-        <a href="#" class="burger-menu-link">О нас</a>
+        <a href="#" data-scroll-to="greeting" class="burger-menu-link">О нас</a>
       </li>
       <li class="burger-menu-items">
-        <a href="#" class="burger-menu-link">Наушники</a>
+        <a href="#" data-scroll-to="assortment" class="burger-menu-link">Наушники</a>
       </li>
       <li class="burger-menu-items">
-        <a href="#" class="burger-menu-link">Команда</a>
+        <a href="#" data-scroll-to="team" class="burger-menu-link">Команда</a>
       </li>
       <li class="burger-menu-items">
-        <a href="#" class="burger-menu-link">Цены</a>
+        <a href="#" data-scroll-to="products-menu" class="burger-menu-link">Цвета</a>
       </li>
       <li class="burger-menu-items">
-        <a href="#" class="burger-menu-link">Отзывы</a>
+        <a href="#" data-scroll-to="reviews" class="burger-menu-link">Отзывы</a>
       </li>
       <li class="burger-menu-items">
-        <a href="#" class="burger-menu-link">Как мы работаем</a>
+        <a href="#" data-scroll-to="video" class="burger-menu-link">Как мы работаем</a>
       </li>
       <li class="burger-menu-items">
-        <a href="#" class="burger-menu-link">Контакты</a>
+        <a href="#" data-scroll-to="map" class="burger-menu-link">Контакты</a>
       </li>
     </ul>
   </div>
@@ -910,6 +898,7 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js" integrity="sha512-YYiD5ZhmJ0GCdJvx6Xe6HzHqHvMpJEPomXwPbsgcpMFPW+mQEeVBU6l9n+2Y+naq+CLbujk91vHyN18q6/RSYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.5/mobile-detect.min.js"></script>
   <script src="https://www.youtube.com/iframe_api"></script>

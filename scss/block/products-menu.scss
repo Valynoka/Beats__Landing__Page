@@ -31,14 +31,26 @@
   display: flex;
 }
 
+
 .products-menu__item {
   display: flex;
+
+  &.active {
+    @include phones {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      z-index: 10;
+    }
+  }
 }
 
 .products-menu__title {
   position: relative;
   width: rtm(102px);
-  z-index: 100;// хотел так спрятать "колонки", чтобы поверх расположился текст.
+  // z-index: 100;// хотел так спрятать "колонки", чтобы поверх расположился текст.
   @include phones {
     width: 6.43rem;
   }
@@ -93,10 +105,8 @@
     line-height: 1.55;
   }
   @include phones {
-    padding: 3.8rem 3.2rem 1rem 3.4rem;
-    font-size: 1.46rem;
-    position: absolute;
-    width: 186%;//ширина тескта.
+    padding: 2.8rem 2.8rem 1rem 2.7rem;
+    font-size: 1.14rem;
   }
 }
 // .products-menu__close {

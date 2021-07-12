@@ -4,7 +4,7 @@
   flex: 1;
 }
 
-.duration__button-wrap {
+.duration__btn-wrap {
   display: flex;
   align-items: center;
   width: 2.39rem;
@@ -28,30 +28,33 @@
     border: 5px solid  transparent;
     border-left-color: #FFF;
   }
-  //подобным образом при нажатии он резко исчезал не фиксировался, хоят active был присвоен
-  // &:active {
-  //   border: 7px solid #FFF;
-  //   height: 1rem;
-  //   border-top: 0;
-  //   border-bottom: 0;
-  //   padding:  1px;
-  // }
-}
-
-
-//только так отображался значок "пауза"
-.video__container-contant--active
-.duration__img{
-  border: 5px solid #FFF;
-  height: 1rem;
-  border-top: 0;
-  border-bottom: 0;
-  padding:  2px;
-  @include phones {
-    height: 0.6rem;
-    width: 0.2rem;
+  &.active {
+    border: 7px solid #FFF;
+    height: 1rem;
+    border-top: 0;
+    border-bottom: 0;
+    padding:  1px;
+    @include phones {
+      height: 0.6rem;
+      width: 0.2rem;
+    }
   }
 }
+
+
+// только так отображался значок "пауза"
+// .video__player-img--active
+// .duration__img {
+//   border: 5px solid #FFF;
+//   height: 1rem;
+//   border-top: 0;
+//   border-bottom: 0;
+//   padding:  2px;
+//   @include phones {
+//     height: 0.6rem;
+//     width: 0.2rem;
+//   }
+// }
 
 
 
@@ -61,40 +64,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  // background-color: red;
-  border: 2px solid #333333;
-  // height: 4px;
+  background-color: red;
+  border: 0px solid #333333;
+  // border: 4px solid #333333;
+  height: 2px;
   border-radius: 1px;
   background: rgba(51, 51, 51, 1);
-  // -webkit-appearance: none;
-  // appearance: none;
-  // outline: 0;
-  cursor: pointer;
-  @include phones {
-    border: 1px solid #333333;
-  }
-}
-
-
-.duration__length-button {
-  position: absolute;
   -webkit-appearance: none;
   appearance: none;
-  background:rgba(224, 31, 61, 1);
+  outline: 0;
   cursor: pointer;
-  width: 0.74rem;
-  height: 0.74rem;
-  border-radius: 50%;
-  border: none;
-  padding: 0;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  left: 0;
   @include phones {
-    width: 0.44rem;
-    height: 0.44rem;
+    border: 0px solid #333333;
+    // border: 2px solid #333333;
   }
 }
+
+
+// .duration__length-button {
+//   position: absolute;
+//   -webkit-appearance: none;
+//   appearance: none;
+//   background:rgba(224, 31, 61, 1);
+//   cursor: pointer;
+//   width: 0.74rem;
+//   height: 0.74rem;
+//   border-radius: 50%;
+//   border: none;
+//   padding: 0;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   left: 0;
+//   @include phones {
+//     width: 0.44rem;
+//     height: 0.44rem;
+//   }
+// }
 
 
 
